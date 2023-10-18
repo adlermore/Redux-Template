@@ -1,15 +1,16 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from './CounterSlice'
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment  } from './CounterSlice';
+import {toggleDisableed } from './IsDisabledSlice';
 // import styles from './Counter.module.css'
 
 export default function Counter() {
     
   const count = useSelector((state) => state.counter.value)
-
+  const isDisabled  =  useSelector((state)=>state.isDisabled.isDisabled)
   const dispatch = useDispatch()
-
-  return (
+  console.log(isDisabled);
+  return (  
     <div>
       <div>
         <button
@@ -25,6 +26,7 @@ export default function Counter() {
         >
           Decrement
         </button>
+        <button disabled={isDisabled} onClick={()=>dispatch(toggleDisableed())}>ToggleDisabled BTN</button>
       </div>
     </div>
   )

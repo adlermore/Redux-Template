@@ -1,12 +1,12 @@
-import { configureStore , applyMiddleware } from '@reduxjs/toolkit';
+import { configureStore  } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/CounterSlice';
-import loggerMiddleware from 'redux-logger';
-
-
-const middlewares = applyMiddleware(loggerMiddleware);
+import IsDisabledSlice from '../features/counter/IsDisabledSlice';
 
 export default configureStore({
     reducer: {
       counter: counterReducer,
-    },
-  })
+      isDisabled: IsDisabledSlice
+    },  
+    devTools: true
+    
+  }) 
