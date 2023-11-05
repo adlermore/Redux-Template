@@ -4,7 +4,7 @@ export const counterSlice = createSlice({
   name: 'counter',
   initialState: { 
     value: 0,
-    // isDisabled : false
+    isDisabled : false
   },
   reducers: {
     increment: (state) => {
@@ -16,9 +16,9 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload
     },
-    // toggleDisableed: (state)=>{
-    //   state.isDisabled = !state.isDisabled
-    // }
+    toggleDisableed: (state)=>{
+      state.isDisabled = !state.isDisabled
+    }
   },
 })
 

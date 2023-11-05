@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment  } from './CounterSlice';
 import {toggleDisableed } from './IsDisabledSlice';
-// import styles from './Counter.module.css'
+import styles from './Counter.module.css'
 
 export default function Counter() {
     
